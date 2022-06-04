@@ -7,3 +7,5 @@ def no_c(my_string):
             if i in "Cc":
                 stringAsList.pop(stringAsList.index(i))
         return "".join(stringAsList)
+    else:
+        return my_string
