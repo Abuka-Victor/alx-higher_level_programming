@@ -1,8 +1,7 @@
-#!/usr/bin/python3
-delete_at = __import__('11-delete_at').delete_at
+#!/usr/bin/env python3
+no_c = __import__('5-no_c').no_c
 
-my_list = [1, 2, 3, 4, 5]
-idx = 3
-new_list = delete_at(my_list, idx)
-print(new_list)
-print(my_list)
+print(no_c("Best School"))
+print(no_c("Chicago"))
+print(no_c("C is fun!"))
+print(no_c(""))
