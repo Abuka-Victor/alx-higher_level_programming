@@ -1,11 +1,7 @@
 #!/usr/bin/python3
 def no_c(my_string):
     if my_string:
-        stringAsList = []
-        stringAsList[:0] = my_string
-        for i in stringAsList:
-            if i in "Cc":
-                stringAsList.pop(stringAsList.index(i))
+        stringAsList = [i for i in my_string if i not in "Cc"]
         return "".join(stringAsList)
     else:
         return my_string
