@@ -31,8 +31,12 @@ int is_palindrome(listint_t **head)
 	for (i = 0, j = count - 1; i < count; i++, j--)
 	{
 		if (numbers[i] != numbers[j])
+		{
+			free(numbers);
 			return (0);
+		}
 	}
 
+	free(numbers);
 	return (1);
 }
