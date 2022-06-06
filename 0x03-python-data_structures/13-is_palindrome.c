@@ -10,6 +10,7 @@
 int is_palindrome(listint_t **head)
 {
 	int count = 0, i, j, *numbers;
+	listint_t *pass, *test;
 
 	if (!head)
 		return (0);
@@ -17,7 +18,7 @@ int is_palindrome(listint_t **head)
 	if (!(*head))
 		return (1);
 
-	listint_t *pass = *head, *test = *head;
+	pass = test = *head;
 
 	for (; pass; pass = pass->next)
 		count++;
