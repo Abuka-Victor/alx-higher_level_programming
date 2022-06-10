@@ -6,3 +6,4 @@ def complex_delete(a_dictionary, value):
             myDel.append(i)
     for i in myDel:
         a_dictionary.pop(i)
+    return a_dictionary
