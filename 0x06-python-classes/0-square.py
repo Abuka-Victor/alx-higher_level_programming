@@ -2,6 +2,8 @@
 """
 A module containing the square class
 """
+
+
 class Square:
     """
     A square class for the alx project
