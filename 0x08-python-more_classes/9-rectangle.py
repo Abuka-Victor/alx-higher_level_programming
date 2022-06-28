@@ -139,8 +139,4 @@ class Rectangle:
 
         Returns: A rectangle with size == height == breadth
         """
-        if not isinstance(size, int):
-            raise TypeError("Size must be an integer")
-        if size < 0:
-            raise ValueError("Size must be >= 0")
         return cls(size, size)
