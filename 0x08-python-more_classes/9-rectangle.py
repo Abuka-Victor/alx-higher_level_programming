@@ -93,7 +93,7 @@ class Rectangle:
         return_string = ""
         if not (self.__width == 0 or self.__height == 0):
             for i in range(self.__height):
-                return_string += f"{self.print_symbol}" * self.__width
+                return_string += "#" * self.__width
                 if i != (self.__height - 1):
                     return_string += '\n'
         return return_string
