@@ -1,0 +1,44 @@
+The ``4-print_square`` module
+======================
+
+Using ``print_square``
+-------------------
+
+Import the function:
+    >>> print_square = __import__('4-print_square').print_square
+
+Check that Module Doc Exists:
+    >>> m = __import__('4-print_square').__doc__
+    >>> type(m)
+    <class 'str'>
+
+Check Module Doc string:
+    >>> len(m) > 1
+    True
+
+Check that Module Function Doc Exists:
+    >>> f = __import__('4-print_square').print_square.__doc__
+    >>> type(f)
+    <class 'str'>
+
+Check Module Function Doc string:
+    >>> len(f) > 1
+    True
+
+Check Module Function Works with prescribed input:
+    >>> print_square(3)
+    ###
+    ###
+    ###
+
+Check that Function Throws TypeError with non-int input
+    >>> print_square("Three")
+    Traceback (most recent call last):
+    ...
+    TypeError: size must be an integer
+
+Check that Function Throws TypeError with float input less than 0
+    >>> print_square(-1.333)
+    Traceback (most recent call last):
+    ...
+    TypeError: size must be an integer
