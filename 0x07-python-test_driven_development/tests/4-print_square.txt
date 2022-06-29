@@ -31,6 +31,19 @@ Check Module Function Works with prescribed input:
     ###
     ###
 
+Check Module Function Works with prescribed input:
+    >>> print_square(-1)
+    Traceback (most recent call last):
+    ...
+    ValueError: size must be >= 0
+
+Check Module Function Works with prescribed input:
+    >>> print_square()
+    Traceback (most recent call last):
+    ...
+    TypeError: print_square() missing 1 required positional argument: 'size'
+
+
 Check that Function Throws TypeError with non-int input
     >>> print_square("Three")
     Traceback (most recent call last):

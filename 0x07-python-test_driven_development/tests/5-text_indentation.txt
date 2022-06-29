@@ -59,6 +59,13 @@ Check that Function prints a single string without endings:
     >>> text_indentation("Hello World")
     Hello World
 
+
+Check that Function throws value error:
+    >>> text_indentation()
+    Traceback (most recent call last):
+    ...
+    TypeError: text_indentation() missing 1 required positional argument: 'text'
+
 Check that Function raises TypeError for non-str input:
     >>> text_indentation(10)
     Traceback (most recent call last):
