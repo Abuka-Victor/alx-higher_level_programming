@@ -58,7 +58,16 @@ Check Module Function Works with prescribed input:
 Check that Function prints a single string without endings:
     >>> text_indentation("Hello World")
     Hello World
-
+    >>> text_indentation("Holberton. School? How are you: John")
+    Holberton.
+    <BLANKLINE>
+     School?
+    <BLANKLINE>
+     How are you:
+    <BLANKLINE>
+     John
+     >>> text_indentation("How are you\n")
+     How are you
 
 Check that Function throws value error:
     >>> text_indentation()
