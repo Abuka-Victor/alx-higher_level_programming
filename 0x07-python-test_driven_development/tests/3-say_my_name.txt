@@ -31,7 +31,7 @@ Check that Function works with right values:
 
 Check that Function works with only one positional arg:
     >>> say_my_name("Victor")
-    My name is Victor
+    My name is Victor 
 
 Check that TypeError is thrown when first_name is not str:
     >>> say_my_name(2.4, "Abuka")
