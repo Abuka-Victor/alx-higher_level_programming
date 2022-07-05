@@ -22,6 +22,7 @@ Check function docs
 Check function with int > 0
     >>> obj = c()
     >>> obj.integer_validator("distance", 10)
+    10
 
 Check function with int = 0
     >>> obj = c()
