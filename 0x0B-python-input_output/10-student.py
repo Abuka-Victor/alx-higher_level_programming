@@ -13,7 +13,7 @@ class Student:
     def to_json(self, attrs=None):
         """ Retrieves a serialized version of the object """
         result = dict(self.__dict__)
-        if attrs:
+        if attrs and all([isinstance(x, str) for x in attrs]):
             result = {}
             for i in attrs:
                 try:
