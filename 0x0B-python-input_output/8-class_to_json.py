@@ -5,4 +5,3 @@
 def class_to_json(obj):
     """ A function to convert obj to serializable dict """
     return obj.__dict__
-
