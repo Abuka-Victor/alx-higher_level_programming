@@ -14,8 +14,10 @@ class Student:
         """ Retrieves a serialized version of the object """
         result = dict(self.__dict__)
         if attrs:
-            keys = list(result.keys())
-            for i in keys:
-                if i not in attrs:
-                    del result[i]
+            result = {}
+            for i in attrs:
+                try:
+                    result[i] = self.__dict__[i]
+                except KeyError:
+                    pass
         return result
