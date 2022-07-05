@@ -1,5 +1,5 @@
 #!/usr/bin/python3
-""" Module for task 9 """
+""" Module for task 10 """
 
 
 class Student:
@@ -11,7 +11,7 @@ class Student:
         self.age = age
 
     def to_json(self, attrs=None):
-        """ Retrieves a serialized version of the object """
+        """ Retrieves a serialized version of the object based on a filter """
         result = dict(self.__dict__)
         if attrs and all([isinstance(x, str) for x in attrs]):
             result = {}
