@@ -45,6 +45,34 @@ Check function with strings
     ...
     TypeError: distance must be an integer
 
+Check function with list
+    >>> obj = c()
+    >>> obj.integer_validator("distance", [4, 6])
+    Traceback (most recent call last):
+    ...
+    TypeError: distance must be an integer
+
+Check function with tuple
+    >>> obj = c()
+    >>> obj.integer_validator("distance", (4, ))
+    Traceback (most recent call last):
+    ...
+    TypeError: distance must be an integer
+
+Check function with sets
+    >>> obj = c()
+    >>> obj.integer_validator("distance", {3, 4})
+    Traceback (most recent call last):
+    ...
+    TypeError: distance must be an integer
+
+Check function with None
+    >>> obj = c()
+    >>> obj.integer_validator("distance", None)
+    Traceback (most recent call last):
+    ...
+    TypeError: distance must be an integer
+
 Check function with no ints
     >>> obj = c()
     >>> obj.integer_validator("distance")
