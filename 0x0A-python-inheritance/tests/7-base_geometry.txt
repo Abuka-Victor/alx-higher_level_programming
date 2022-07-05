@@ -1,0 +1,67 @@
+From the ``7-base_geometry`` module
+=================================
+
+Using ``integer_validator``
+--------------------------
+
+Import the module and check docs
+    >>> m = __import__('7-base_geometry')
+    >>> len(m.__doc__) > 1
+    True
+
+Check class docs
+    >>> c = m.BaseGeometry
+    >>> len(c.__doc__) > 1
+    True
+
+Check function docs
+    >>> f = c.integer_validator
+    >>> len(f.__doc__) > 1
+    True
+
+Check function with int > 0
+    >>> obj = c()
+    >>> obj.integer_validator("distance", 10)
+
+Check function with int = 0
+    >>> obj = c()
+    >>> obj.integer_validator("distance", 0)
+    Traceback (most recent call last):
+    ...
+    ValueError: distance must be greater than 0
+
+Check function with int < 0
+    >>> obj = c()
+    >>> obj.integer_validator("distance", -1)
+    Traceback (most recent call last):
+    ...
+    ValueError: distance must be greater than 0
+
+Check function with strings
+    >>> obj = c()
+    >>> obj.integer_validator("distance", "Lol")
+    Traceback (most recent call last):
+    ...
+    TypeError: distance must be an integer
+
+Check function with no ints
+    >>> obj = c()
+    >>> obj.integer_validator("distance")
+    Traceback (most recent call last):
+    ...
+    TypeError: integer_validator() takes exactly 3 arguments (2 given)
+
+Check function with no args
+    >>> obj = c()
+    >>> obj.integer_validator()
+    Traceback (most recent call last):
+    ...
+    TypeError: integer_validator() takes exactly 3 arguments (1 given)
+
+
+Check area function
+    >>> obj = c()
+    >>> obj.area()
+    Traceback (most recent call last):
+    ...
+    Exception: area() is not implemented
