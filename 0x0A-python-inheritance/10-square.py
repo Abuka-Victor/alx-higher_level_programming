@@ -1,40 +1,19 @@
 #!/usr/bin/python3
-""" Module for task 10 """
-class BaseGeometry:
-    """ My base geometry class """
+"""
+Contains the class BaseGeometry and subclass Rectangle
+"""
 
-    def area(self):
-        """ Calculates area """
-        raise Exception("area() is not implemented")
-
-    def integer_validator(self, name, value):
-        """ Integer Validator Method """
-        if type(value) != int:
-            raise TypeError("{} must be an integer".format(name))
-        if value <= 0:
-            raise ValueError("{} must be greater than 0".format(name))
-        return value
-
-
-class Rectangle(BaseGeometry):
-
-    def __init__(self, width, height):
-        self.__width = self.integer_validator("width", width)
-        self.__height = self.integer_validator("height", height)
-
-    def area(self):
-        return self.__width * self.__height
-
-    def __str__(self):
-        return "[Rectangle] {width}/{height}".format(width=self.__width, height=self.__height)
+Rectangle = __import__('9-rectangle').Rectangle
 
 
 class Square(Rectangle):
+    """A representation of a square"""
     def __init__(self, size):
-        self.__size = self.integer_validator("Size", size)
+        """instantiation of the square"""
+        self.integer_validator("size", size)
+        self.__size = size
+        super().__init__(size, size)
 
     def area(self):
+        """"returns the area of the square"""
         return self.__size ** 2
-
-    def __str__(self):
-        return "[Rectangle] {size}/{size}".format(size=self.__size)
