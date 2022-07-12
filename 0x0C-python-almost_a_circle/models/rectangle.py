@@ -116,8 +116,8 @@ class Rectangle(Base):
     def to_dictionary(self):
         """ To Dictionary """
         result = {"x": self.__dict__["_Rectangle__x"],
-                  "y": self.__dict__["_Rectangle__y"],
+                  "width": self.__dict__["_Rectangle__width"],
                   "id": self.__dict__["id"],
                   "height": self.__dict__["_Rectangle__height"],
-                  "width": self.__dict__["_Rectangle__width"]}
+                  "y": self.__dict__["_Rectangle__y"]}
         return result
