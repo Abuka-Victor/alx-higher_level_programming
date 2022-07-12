@@ -38,4 +38,3 @@ class TestRectangle(unittest.TestCase):
     def test_str(self):
         rect = Rectangle(4, 6, 2, 1, 12)
         self.assertEqual(str(rect), "[Rectangle] (12) 2/1 - 4/6")
-

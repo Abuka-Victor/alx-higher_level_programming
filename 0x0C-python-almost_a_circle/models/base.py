@@ -67,4 +67,3 @@ class Base:
             for i in file_list:
                 instances.append(cls.create(**i))
         return instances
-
