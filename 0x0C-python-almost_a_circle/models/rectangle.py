@@ -1,18 +1,6 @@
 #!/usr/bin/python3
 """ My Rectangle class module """
-
-
-class Base:
-    """ My Base Class """
-    __nb_objects = 0
-
-    def __init__(self, id=None):
-        """ Initialization method """
-        if id is not None:
-            self.id = id
-        else:
-            type(self).__nb_objects += 1
-            self.id = self.__nb_objects
+from models.base import Base
 
 
 class Rectangle(Base):
@@ -94,7 +82,9 @@ class Rectangle(Base):
 
     def display(self):
         """ Prints a rectangle with # """
+        print("\n" * self.__y, end="")
         for i in range(self.__height):
+            print(" " * self.__x, end="")
             print("#" * self.__width)
 
     def update(self, *args, **kwargs):
@@ -122,3 +112,12 @@ class Rectangle(Base):
                 self.x = kwargs["x"]
             if "y" in kwargs:
                 self.y = kwargs["y"]
+
+    def to_dictionary(self):
+        """ To Dictionary """
+        result = {"x": self.__dict__["_Rectangle__x"],
+                  "y": self.__dict__["_Rectangle__y"],
+                  "id": self.__dict__["id"],
+                  "height": self.__dict__["_Rectangle__height"],
+                  "width": self.__dict__["_Rectangle__width"]}
+        return result

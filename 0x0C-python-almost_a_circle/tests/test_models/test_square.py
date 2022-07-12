@@ -1,17 +1,17 @@
-""" Test Module for rectangle.py """
+""" Test Module for square.py """
 import unittest
-Rectangle = __import__("models.rectangle").rectangle.Rectangle
+
+Square = __import__("models.square").square.Square
 
 
 class TestRectangle(unittest.TestCase):
-    """ Test class for rectangle.py """
+    """ Test class for base.py """
 
     def test_id(self):
-        rect = Rectangle(10, 12, id=1)
-        self.assertEqual(rect.id, 1)
+        self.assertEqual(Square(4, id=1).id, 1)
 
     def test_raiseError(self):
-        rect = Rectangle(10, 12, id=1)
+        rect = Square(10, 12, id=1)
         with self.assertRaises(TypeError):
             rect.width = "Lol"
         with self.assertRaises(TypeError):
@@ -30,12 +30,11 @@ class TestRectangle(unittest.TestCase):
             rect.y = -4
 
     def test_area(self):
-        rect = Rectangle(3, 2)
-        self.assertEqual(rect.area(), 6)
+        rect = Square(3)
+        self.assertEqual(rect.area(), 9)
         with self.assertRaises(TypeError):
             rect.area(1)
 
     def test_str(self):
-        rect = Rectangle(4, 6, 2, 1, 12)
-        self.assertEqual(str(rect), "[Rectangle] (12) 2/1 - 4/6")
-
+        rect = Square(4, 2, 1, 12)
+        self.assertEqual(str(rect), "[Square] (12) 2/1 - 4")
