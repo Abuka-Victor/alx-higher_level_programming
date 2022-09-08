@@ -1,3 +1,5 @@
 #!/usr/bin/node
-const add = require('./13-add').add;
-console.log(add(3, 5));
+const addMeMaybe = require('./102-add_me_maybe').addMeMaybe;
+addMeMaybe(4, function (nb) {
+  console.log('New value: ' + nb);
+});
