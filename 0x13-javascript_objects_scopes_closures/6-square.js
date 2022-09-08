@@ -33,14 +33,14 @@ module.exports = class Square extends Rectangle {
     super(s, s);
   }
 
-  charPrint (char = 'X') {
-    let symbol = char;
+  charPrint (c = 'X') {
+    let symbol = c;
     for (let i = 0; i < this.height; i++) {
       for (let j = 1; j < this.width; j++) {
-        symbol = symbol.concat(char);
+        symbol = symbol.concat(c);
       }
       console.log(symbol);
-      symbol = char;
+      symbol = c;
     }
   }
 };
