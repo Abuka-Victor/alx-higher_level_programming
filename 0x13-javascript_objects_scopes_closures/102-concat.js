@@ -6,4 +6,5 @@ const destination = process.argv[4];
 
 const text1 = fs.readFileSync(sourceA, 'utf-8').trim();
 const text2 = fs.readFileSync(sourceB, 'utf-8').trim();
-fs.writeFileSync(destination, `${text1}\n${text2}`);
+const output = `${text1}\n${text2}\n`;
+fs.writeFileSync(destination, output.trim());
