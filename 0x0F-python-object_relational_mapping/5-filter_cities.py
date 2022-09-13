@@ -18,10 +18,13 @@ if __name__ == "__main__":
         WHERE State=%s;
         """, (sys.argv[4],))
     query_rows = cur.fetchall()
-    for row in query_rows:
-        if row != query_rows[-1]:
-            print("{}, ".format(*row), end="")
-        else:
-            print(*row)
+    if query_rows:
+        for row in query_rows:
+            if row != query_rows[-1]:
+                print("{}, ".format(*row), end="")
+            else:
+                print(*row)
+    else:
+        print()
     cur.close()
     conn.close()
