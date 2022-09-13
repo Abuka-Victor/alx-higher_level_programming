@@ -16,6 +16,7 @@ if __name__ == "__main__":
     session = Session()
     louis = State(name="Louisiana")
     session.add(louis)
+    session.commit()
     results = session.query(State)\
         .filter_by(name="Louisiana").first()
     if results.all():
