@@ -3,8 +3,8 @@
 """
 import sys
 from model_state import Base, State
-
 from sqlalchemy import (create_engine)
+from sqlalchemy.orm import sessionmaker
 
 if __name__ == "__main__":
     engine = create_engine('mysql+mysqldb://{}:{}@localhost:3306/{}'.format(
@@ -12,9 +12,10 @@ if __name__ == "__main__":
         sys.argv[2],
         sys.argv[3]),
         pool_pre_ping=True)
-    result = engine.execute("SELECT * FROM states LIMIT 1")
+    Session = sessionmaker(bind=engine)
+    session = Session()
+    result = session.query(State).first()
     if result:
-        for row in result:
-            print("{}: {}".format(row[0], row[1]))
+        print("{}: {}".format(result.id, result.name))
     else:
         print("Nothing")
