@@ -14,6 +14,5 @@ if __name__ == "__main__":
         pool_pre_ping=True)
     Session = sessionmaker(bind=engine)
     session = Session()
-    deleted = State.__table__.delete().where(State.id.ilike('%a%'))
-    session.execute(delete)
+    deleted = session.query(State).filter(State.name.ilike('%a%')).delete()
     session.commit()
