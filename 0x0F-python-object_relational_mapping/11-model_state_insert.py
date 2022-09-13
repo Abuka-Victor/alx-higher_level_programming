@@ -14,10 +14,9 @@ if __name__ == "__main__":
         pool_pre_ping=True)
     Session = sessionmaker(bind=engine)
     session = Session()
+    louis = State(name="Louisiana")
+    session.add(louis)
+    session.commit()
     results = session.query(State)\
-        .order_by(State.id)\
-        .filter_by(name=sys.argv[4])
-    if results.all():
-        print("{}".format(results[0].id))
-    else:
-        print("Not found")
+        .filter_by(name="Louisiana").first()
+    print("{}".format(results.id))
