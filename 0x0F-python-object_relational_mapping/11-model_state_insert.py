@@ -19,5 +19,4 @@ if __name__ == "__main__":
     session.commit()
     results = session.query(State)\
         .filter_by(name="Louisiana").first()
-    if results.all():
-        print("{}".format(results[0].id))
+    print("{}".format(results.id))
