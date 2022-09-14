@@ -8,9 +8,9 @@ from sys import argv
 
 if __name__ == "__main__":
     engine = create_engine("mysql+mysqldb://{}:{}@localhost:3306/{}".format(argv[1], argv[2], argv[3]))
-    Base.metadata.create(engine)
+    Base.metadata.create_all(engine)
     Session = sessionmaker(bind=engine)
     session = Session()
-    result = session.query(City).all()
+    result = session.query(City, State).filter(City.state_id == State.id).all()
     for row in result:
-        print(row)
+        print("{}: ({}) {}".format(row[1].name, row[0].id, row[0].name))
