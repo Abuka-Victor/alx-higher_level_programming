@@ -1,7 +1,7 @@
 #!/usr/bin/python3
 """A model for the city table"""
 from sqlalchemy import Column, Integer, String, ForeignKey
-from model_state import Base
+from relationship_state import Base
 
 
 class City(Base):
