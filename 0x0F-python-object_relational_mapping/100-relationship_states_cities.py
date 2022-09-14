@@ -12,6 +12,6 @@ if __name__ == "__main__":
     Base.metadata.create_all(engine)
     Session = sessionmaker(bind=engine)
     session = Session()
-    result = session.query(City, State).filter(City.state_id == State.id).all()
-    for row in result:
-        print("{}: ({}) {}".format(row[1].name, row[0].id, row[0].name))
+    state = State(name="California")
+    state.cities = [City(name="San Francisco")]
+    session.commit()
