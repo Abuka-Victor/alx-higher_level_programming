@@ -3,6 +3,7 @@
 from sqlalchemy import Column, Integer, String, ForeignKey
 from model_state import Base
 
+
 class City(Base):
     """A city table defined with the sqlalchemy lib"""
     __tablename__ = 'cities'
