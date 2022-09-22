@@ -1,3 +1,3 @@
 #!/bin/bash
 # show methods
-curl -I -L -s -X OPTIONS $1 | grep allow | tr -d 'allow: '
+curl -si -X OPTIONS $1 | grep Allow | tr -d 'Allow: '
